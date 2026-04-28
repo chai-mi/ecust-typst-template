@@ -277,21 +277,18 @@ $ <eq3>
 
 // 你校不知道为什么会要求参考文献换行后的行头位置超过序号
 // 如果有要求就把下面 full-control 这个参数启用
-#{
-  set par(justify: true, leading: 0.95em, spacing: 0.95em, first-line-indent: 2em)
-  gb7714-bibliography(
-    // full-control: entries => {
-    //   for e in entries [
-    //     #set par(first-line-indent: 2em, hanging-indent: 0em)
+#gb7714-bibliography(
+  // full-control: entries => {
+  //   for e in entries [
+  //     #set par(first-line-indent: 2em, hanging-indent: 0em)
 
-    //     [#e.order]
-    //     #e.labeled-rendered
-    //     #parbreak()
-    //   ]
-    // },
-    title: heading(level: 1)[参考文献],
-  )
-}
+  //     [#e.order]
+  //     #e.labeled-rendered
+  //     #parbreak()
+  //   ]
+  // },
+)
+
 
 #set heading(numbering: "A.1")
 
