@@ -1,6 +1,7 @@
-#import "@preview/lovelace:0.2.0": *
 // 使用伪粗体修复中文粗体不能正确显示的问题
-#import "@preview/cuti:0.3.0": show-cn-fakebold
+#import "@preview/cuti:0.4.0": show-cn-fakebold
+#import "@preview/gb7714-bilingual:0.2.3": init-gb7714
+#import "@preview/subpar:0.2.2"
 
 #import "fonts/font.typ": *
 #import "pages/chinese-outline.typ": chinese_outline
@@ -11,11 +12,17 @@
 #import "pages/封面.typ": paper_cover
 #import "pages/paper-pages.typ": *
 
-#import "utilities/three-line-table.typ": three_line_table
 #import "utilities/indent-funs.typ": *
 #import "utilities/set-heading.typ": _set_heading
 #import "utilities/set-figure.typ": _set_figure
 #import "utilities/set-numbering.typ": _set_numbering
+
+#let sub-figure-numbering = (super, sub) => numbering("1.1a", counter(heading).get().first(), super, sub)
+#let figure-numbering = super => numbering("1.1", counter(heading).get().first(), super)
+#let subpar-grid = subpar.grid.with(
+  numbering: figure-numbering,
+  numbering-sub-ref: sub-figure-numbering,
+)
 
 #let project(
   anonymous: false, // 是否匿名化处理
@@ -40,6 +47,8 @@
 ) = {
   let full_title = title + title2
   /* 全局整体设置 */
+  set text(lang: "zh", region: "cn")
+
 
   // 设置标题, 需要在图表前设置
   show: _set_heading
@@ -107,6 +116,8 @@
   // 目录
   chinese_outline()
 
+  show: init-gb7714.with(read("ref.bib"), style: "numeric", version: "2015", show-url: false, show-doi: false)
+
   /* 正文 */
 
   // 正文的页脚
@@ -115,6 +126,10 @@
 
   // https://forum.typst.app/t/how-to-have-headings-without-numbers-in-a-fluent-way/3457
   show selector(<nonumber>): set heading(numbering: none)
+
+  set enum(indent: 2em)
+
+  set list(indent: 2em)
 
   counter(page).update(1)
 

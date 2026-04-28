@@ -23,7 +23,12 @@
   }
   show math.equation.where(block: true): it => {
     it + empty_par()
-  }  
-
+  }
+  show list: it => {
+    it + empty_par()
+  }
+  show enum: it => {
+    it + empty_par()
+  }
   body
 }

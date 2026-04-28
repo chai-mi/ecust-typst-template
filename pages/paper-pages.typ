@@ -21,7 +21,6 @@
 #let _set_paper_page_par(body) = {
   set text(font: songti, 字号.小四)
   set par(justify: true, leading: 0.95em, spacing: 0.95em, first-line-indent: 2em)
-  show par: set block(spacing: 0.95em)
 
   body
 }
@@ -30,9 +29,12 @@
 #let _set_paper_page_header(anonymous: false, title: "默认标题", show_page: true, body) = {
   set page(
     margin: (
-      top: 3.17cm,
+      top: 2.8cm,
+      bottom: 2.5cm,
+      left: 2.5cm,
+      right: 2.5cm,
     ),
-    header-ascent: 18pt,
+    header-ascent: 0.23cm,
     header: {
       set text(font: songti, 字号.五号, baseline: 8pt, spacing: 2pt)
       grid(
@@ -53,8 +55,8 @@
           }
         },
       )
-
-      line(length: 100%, stroke: 0.1pt)
+      v(0.2cm)
+      line(length: 100%, stroke: 0.4pt)
     },
   )
 
