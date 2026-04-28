@@ -8,7 +8,6 @@
 #import "pages/declaration.typ": declaration
 #import "pages/zh-abstract-page.typ": zh_abstract_page
 #import "pages/en-abstract-page.typ": en_abstract_page
-#import "pages/references.typ": _set_references
 #import "pages/封面.typ": paper_cover
 #import "pages/paper-pages.typ": *
 
@@ -56,8 +55,6 @@
   show: _set_figure
   // 图表公式的序号
   show: _set_numbering
-  // 参考文献
-  show: _set_references
   // 修复缩进
   show: _fix_indent
   // 整体页面设置
