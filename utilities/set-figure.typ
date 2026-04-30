@@ -1,3 +1,5 @@
+#import "@preview/pointless-size:0.1.2": zh
+
 #import "../fonts/font.typ": *
 
 // 设置图表
@@ -9,7 +11,7 @@
   show figure.where(kind: table): set figure.caption(position: top)
 
   // 使用正确的编号与图表标题字体及分隔符
-  show figure.caption: set text(font: songti, size: 字号.五号, weight: "bold")
+  show figure.caption: set text(font: songti, size: zh(5), weight: "bold")
   set figure.caption(separator: " ")
 
   // 设置代码块字体，其中中文默认使用宋体。

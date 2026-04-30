@@ -1,3 +1,5 @@
+#import "@preview/pointless-size:0.1.2": zh
+
 #import "../fonts/font.typ": *
 
 #let en_abstract_page(abstract, keywords: ()) = {
@@ -9,14 +11,14 @@
   }
   [= Abstract <_en_abstract_>]
 
-  set text(font: "Times New Roman", size: 字号.小四)
+  set text(font: "Times New Roman", size: zh(4.5))
 
   abstract
   par(first-line-indent: 0em)[
-    #text(weight: "bold", font: "Times New Roman", size: 字号.小四)[
+    #text(weight: "bold", font: "Times New Roman", size: zh(4.5))[
       Keywords:
     ]
-    #text(weight: "regular", font: "Times New Roman", size: 字号.小四)[
+    #text(weight: "regular", font: "Times New Roman", size: zh(4.5))[
       #keywords.join(",")
     ]
   ]

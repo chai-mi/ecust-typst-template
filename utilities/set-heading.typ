@@ -1,3 +1,5 @@
+#import "@preview/pointless-size:0.1.2": zh
+
 #import "../fonts/font.typ": *
 
 #let _set_heading(body) = {
@@ -19,18 +21,18 @@
   }
   show heading.where(level: 1): it => {
     set align(center)
-    set text(weight: "regular", font: heiti, size: 字号.小二)
+    set text(weight: "regular", font: heiti, size: zh(2.5))
     set block(spacing: 1.14em, below: 1.14em)
     pagebreak(weak: true)
     block(it)
   }
   show heading.where(level: 2): it => {
-    set text(weight: "regular", font: heiti, size: 字号.四号)
+    set text(weight: "regular", font: heiti, size: zh(4))
     set block(above: 1.14em, below: 1.14em)
     block(it)
   }
   show heading.where(level: 3): it => {
-    set text(weight: "regular", font: heiti, size: 字号.小四)
+    set text(weight: "regular", font: heiti, size: zh(4.5))
     set block(above: 1.14em, below: 1.14em)
     block(it)
   }

@@ -1,3 +1,5 @@
+#import "@preview/pointless-size:0.1.2": zh
+
 #import "../fonts/font.typ": *
 
 #let paper_cover(
@@ -45,7 +47,7 @@
         ),
         text(
           font: zhongsong,
-          size: 字号.小二,
+          size: zh(2.5),
           bottom-edge: "descender",
         )[
           #body
@@ -60,7 +62,7 @@
         stroke: none,
         text(
           font: zhongsong,
-          size: 字号.小二,
+          size: zh(2.5),
           body,
         ),
       )
@@ -94,7 +96,7 @@
 
     #text(
       font: zhongsong_pure,
-      size: 字号.小二,
+      size: zh(2.5),
     )[
       定稿日期： #date.at(0) 年 #date.at(1) 月 #date.at(2) 日
     ]

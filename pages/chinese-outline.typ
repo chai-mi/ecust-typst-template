@@ -1,10 +1,12 @@
+#import "@preview/pointless-size:0.1.2": zh
+
 #import "../fonts/font.typ": *
 
 
 
 #let chinese_outline() = {
   align(center)[
-    #text(font: heiti, size: 字号.小二, "目录")
+    #text(font: heiti, size: zh(2.5), "目录")
   ]
 
   set text(font: songti, size: 12pt)
@@ -35,57 +37,57 @@
       }
 
       link(el.location())[#{
-          // acknoledgement has no numbering
-          let chapt_num = if el.numbering != none {
-            numbering(el.numbering, ..counter(heading).at(el.location()))
-          } else { none }
+        // acknoledgement has no numbering
+        let chapt_num = if el.numbering != none {
+          numbering(el.numbering, ..counter(heading).at(el.location()))
+        } else { none }
 
-          if el.level == 1 {
-            set text(font: heiti, size: 字号.四号)
-            // 段前、段后为12磅
-            block(
-              above: 0pt,
-              below: 0pt,
-              inset: (top: 12pt, bottom: 12pt, left: 0pt, right: 0pt),
-              {
-                if chapt_num == none { } else {
-                  chapt_num
-                  " "
-                }
-                el.body
-                填充(page_num)
-              },
-            )
-          } else if el.level == 2 {
-            set text(font: heiti, size: 字号.小四)
-            block(
-              above: 0pt,
-              below: 0pt,
-              inset: (top: 6pt, bottom: 6pt, left: 0pt, right: 0pt),
-              {
-                "    "
+        if el.level == 1 {
+          set text(font: heiti, size: zh(4))
+          // 段前、段后为12磅
+          block(
+            above: 0pt,
+            below: 0pt,
+            inset: (top: 12pt, bottom: 12pt, left: 0pt, right: 0pt),
+            {
+              if chapt_num == none {} else {
                 chapt_num
                 " "
-                el.body
-                填充(page_num)
-              },
-            )
-          } else {
-            set text(font: heiti, size: 字号.五号)
-            block(
-              above: 0pt,
-              below: 0pt,
-              inset: (top: 6pt, bottom: 6pt, left: 0pt, right: 0pt),
-              {
-                "        "
-                chapt_num
-                " "
-                el.body
-                填充(page_num)
-              },
-            )
-          }
-        }]
+              }
+              el.body
+              填充(page_num)
+            },
+          )
+        } else if el.level == 2 {
+          set text(font: heiti, size: zh(4.5))
+          block(
+            above: 0pt,
+            below: 0pt,
+            inset: (top: 6pt, bottom: 6pt, left: 0pt, right: 0pt),
+            {
+              "    "
+              chapt_num
+              " "
+              el.body
+              填充(page_num)
+            },
+          )
+        } else {
+          set text(font: heiti, size: zh(5))
+          block(
+            above: 0pt,
+            below: 0pt,
+            inset: (top: 6pt, bottom: 6pt, left: 0pt, right: 0pt),
+            {
+              "        "
+              chapt_num
+              " "
+              el.body
+              填充(page_num)
+            },
+          )
+        }
+      }]
 
       // 填充 ......
       // box(width: 1fr, h(0.5em) + box(width: 1fr, repeat[.]) + h(0.5em))

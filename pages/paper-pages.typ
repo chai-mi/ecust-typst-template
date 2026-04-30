@@ -1,5 +1,5 @@
+#import "@preview/pointless-size:0.1.2": zh
 
-// 默认本科生毕业论文的页面设置 (CSE 格式)
 #import "../fonts/font.typ": *
 
 // 页面大小
@@ -19,7 +19,7 @@
 
 // 页面布局
 #let _set_paper_page_par(body) = {
-  set text(font: songti, 字号.小四)
+  set text(font: songti, zh(4.5))
   set par(justify: true, leading: 0.95em, spacing: 0.95em, first-line-indent: 2em)
 
   body
@@ -36,7 +36,7 @@
     ),
     header-ascent: 0.23cm,
     header: {
-      set text(font: songti, 字号.五号, baseline: 8pt, spacing: 2pt)
+      set text(font: songti, zh(5), baseline: 8pt, spacing: 2pt)
       grid(
         columns: (5fr, 1fr),
         {
@@ -72,7 +72,7 @@
     ),
     footer: {
       set align(center)
-      context { text(font: songti, 字号.五号, baseline: 0pt, counter(page).display("I")) }
+      context { text(font: songti, zh(5), baseline: 0pt, counter(page).display("I")) }
     },
   )
 
