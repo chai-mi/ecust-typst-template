@@ -8,7 +8,7 @@
 #import "pages/declaration.typ": declaration
 #import "pages/zh-abstract-page.typ": zh_abstract_page
 #import "pages/en-abstract-page.typ": en_abstract_page
-#import "pages/封面.typ": paper_cover
+#import "pages/cover.typ": paper_cover
 #import "pages/paper-pages.typ": *
 
 #import "utilities/indent-funs.typ": *
