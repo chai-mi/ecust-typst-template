@@ -42,6 +42,7 @@
   date: (1926, 8, 17),
   作者声明日期: (2025, 5, 16),
   作者签名图片: "signature.png",
+  bib-content: read("ref.bib"),
   body,
 ) = {
   let full_title = title + title2
@@ -113,7 +114,7 @@
   // 目录
   chinese_outline()
 
-  show: init-gb7714.with(read("ref.bib"), style: "numeric", version: "2015", show-url: false, show-doi: false)
+  show: init-gb7714.with(bib-content, style: "numeric", version: "2015", show-url: false, show-doi: false)
 
   /* 正文 */
 

@@ -29,6 +29,7 @@
   date: (1919, 8, 10),
   作者声明日期: (1145, 1, 4),
   作者签名图片: image("assets/signature.png", width: 80pt),
+  bib-content: read("ref.bib"),
 )
 
 = 绪论
