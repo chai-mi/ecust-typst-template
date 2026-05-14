@@ -19,7 +19,7 @@
       Keywords:
     ]
     #text(weight: "regular", font: "Times New Roman", size: zh(4.5))[
-      #keywords.join(",")
+      #keywords.join(", ")
     ]
   ]
 }
