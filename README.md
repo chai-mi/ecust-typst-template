@@ -23,7 +23,7 @@
 1. 下载或 clone 本仓库源码。
 2. 安装 vscode 并安装 [Tinymist Typst](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist) 插件，打开源码文件夹。
 3. 按本仓库中的 `sample.typ` 照葫芦画瓢即可。保存 `.typ` 文件会自动生成 pdf。
-4. 插入任务书：华东理工大学论文里需要有任务书，任务书从**课题资料管理**中下载。`uvx pymupdf join -o output.pdf sample.pdf 任务书.pdf`
+4. 插入任务书：华东理工大学论文里需要有任务书，任务书从**课题资料管理**中下载。`uvx pymupdf join -o output.pdf "你的论文.pdf,,1" 任务书.pdf "你的论文.pdf,,2-N"`
 
 ## 其他说明
 
