@@ -81,6 +81,14 @@
     date,
   )
 
+  // 需要插入任务书则取消下面的注释
+  /*
+  for i in range(1, 3) {
+    set page(margin: 0pt)
+    image("任务书.pdf", page: i)
+  }
+  */
+
   // 原创性声明
   declaration(anonymous: anonymous, signature: 作者签名图片, date: 作者声明日期)
 
